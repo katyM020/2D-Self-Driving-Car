@@ -1,0 +1,57 @@
+<Car_Attributes>:
+    size: 40, 20
+    canvas:
+        PushMatrix
+        Rotate:
+            angle: self.angle
+            origin: self.center
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'car.png'
+        PopMatrix
+
+<LeftSide>:
+    size: 15,15
+    canvas:
+        Color:
+            rgba: 1,0,0,0
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Middle>:
+    size: 15,15
+    canvas:
+        Color:
+            rgba: 0,1,1,0
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<RightSide>:
+    size: 15,15
+    canvas:
+        Color:
+            rgba: 1,1,0,0
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<Self_driving_car>:
+    vechile: car_attributes
+    leftside: l_torch
+    middle: m_torch
+    rightside: r_torch
+
+    Car_Attributes:
+        id: car_attributes
+        center: self.parent.center
+    LeftSide:
+        id: l_torch
+        center: self.parent.center
+    Middle:
+        id: m_torch
+        center: self.parent.center
+    RightSide:
+        id: r_torch
+        center: self.parent.center
